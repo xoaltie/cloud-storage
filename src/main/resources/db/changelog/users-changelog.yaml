@@ -1,6 +1,27 @@
 databaseChangeLog:
   - changeSet:
-      id: 0
-      author: admin
+      id: create-users-table
+      author: xoaltie
       changes:
-        -
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: username
+                  type: text
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: password
+                  type: text
+                  constraints:
+                    nullable: false
+
